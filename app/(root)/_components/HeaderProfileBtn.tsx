@@ -1,22 +1,28 @@
-import { UserButton } from '@clerk/nextjs'
-import { User } from '@clerk/nextjs/server'
-import { User2 } from 'lucide-react'
-import React from 'react'
+"use client";
+import { UserButton } from '@clerk/nextjs';
+import { User2 } from 'lucide-react';
+import React, { useState } from 'react';
 
 const HeaderProfileBtn = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div>
-      <UserButton>
-        <UserButton.MenuItems>
-            <UserButton.Link
-            label='Profile'
-            labelIcon={<User2 className="size-4"/>}
-            href='/profile'
-            ></UserButton.Link>
-        </UserButton.MenuItems>
-      </UserButton>
+      <UserButton
+        onClick={() => setMenuOpen(!menuOpen)}
+        appearance={{
+          elements: { userButtonAvatarBox: 'size-4' },
+        }}
+      />
+      {menuOpen && (
+        <div className="menu">
+          <a href="/profile" className="menu-item">
+            <User2 className="size-4" /> Profile
+          </a>
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default HeaderProfileBtn
+export default HeaderProfileBtn;

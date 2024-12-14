@@ -1,5 +1,5 @@
 import { api } from "@/convex/_generated/api"
-import { SignedIn } from "@clerk/nextjs"
+import { SignedIn, SignedOut, SignIn } from "@clerk/nextjs"
 import { currentUser } from "@clerk/nextjs/server"
 import { ConvexHttpClient } from "convex/browser"
 import { Blocks, Code2, Sparkles } from "lucide-react"
@@ -76,7 +76,7 @@ async function Header() {
         <div className="flex items-center gap-4 ">
           <div className="flex items-center gap-3">
             <ThemeSelector/>
-            <LanguageSelector/>
+            <LanguageSelector hasAccess={Boolean(convexUser?.isPro)}/>
           </div>
    
         {!convexUser?.isPro && (
@@ -90,9 +90,16 @@ async function Header() {
           </Link>
         )}
 
+
         <SignedIn>
           <RunButton/>
         </SignedIn>
+        {/* <SignedOut>
+          <SignIn/>
+        </SignedOut> */}
+
+
+
         <div className="pl-3 border-1 border-gray-800">
           <HeaderProfileBtn />
         </div>

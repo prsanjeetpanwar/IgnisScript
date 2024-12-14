@@ -1,6 +1,6 @@
-import Header from "./_components/Header";
-import EditorPanel from "./_components/EditorPanel";
-import OutputPanel from "./_components/OutputPanel";
+import Header from "@/app/(root)/_components/Header";
+import EditorPanel from "@/app/(root)/_components/EditorPanel";
+import OutputPanel from "@/app/(root)/_components/OutputPanel";
 import { SignInButton, SignOutButton, SignUpButton } from "@clerk/nextjs";
 
 
