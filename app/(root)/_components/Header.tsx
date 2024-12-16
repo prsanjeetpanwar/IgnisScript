@@ -94,10 +94,7 @@ async function Header() {
         <SignedIn>
           <RunButton/>
         </SignedIn>
-        {/* <SignedOut>
-          <SignIn/>
-        </SignedOut> */}
-
+       
 
 
         <div className="pl-3 border-1 border-gray-800">
