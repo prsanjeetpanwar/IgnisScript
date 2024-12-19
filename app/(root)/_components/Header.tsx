@@ -1,5 +1,5 @@
 import { api } from "@/convex/_generated/api"
-import { SignedIn, SignedOut, SignIn } from "@clerk/nextjs"
+import { SignedIn, SignedOut, SignIn, SignInButton } from "@clerk/nextjs"
 import { currentUser } from "@clerk/nextjs/server"
 import { ConvexHttpClient } from "convex/browser"
 import { Blocks, Code2, Sparkles } from "lucide-react"
@@ -90,10 +90,16 @@ async function Header() {
           </Link>
         )}
 
-
+<SignedOut>
+          <SignInButton/>
+        </SignedOut>
         <SignedIn>
           <RunButton/>
         </SignedIn>
+
+        <SignedOut>
+          <SignIn/>
+        </SignedOut>
        
 
 

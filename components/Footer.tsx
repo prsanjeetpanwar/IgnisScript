@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <footer className='text-white relative border-t bg-gray-800/50 mt-40'>
+    <footer className='text-white  relative border-t bg-gray-800/50 mt-40'>
       <div className='absolute inset-x-0 -top-px h-px
       bg-gradient-to-r from bg-transparent via-gray-900 to-transparent
       '>
